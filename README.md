@@ -80,16 +80,7 @@ These configurations were chosen to facilitate effective training and classifica
 The .pt files(extracted features of images from clip model) can be accessed from the `extracted_features_paper_4` Folder 
 The model created for Linear Classification is present with named `lc_paper_4.h5` in the saved_models folder
 # Paper 2
-Implemented the hierarchical multi-level approach mentioned in paper 2 where each level results are as follows:
-
-## Level-1(Real vs Fake):
-To classifiy real class from fake class Achieves 54% accuracy to detect real and Fake Images (Trained on Dalle generated fake images and Laiom Real images and tested on Biggan generated fake images).
-
-## Level-2(GANs vs DMs):
-The model trained for detecting the source or the model which generated the fake image achieves a Testing Accuracy of 63%(Trained on dalle and biggan).
-
-## Level-3(Each model under GAN classification and each model under DMs): 
-Model trained to determine class of image generated from each gan models(9) and diffusion models(4) , (achieved max accuracy of 48% training and testing on the 4 different diffusion models).
+Implemented the hierarchical multi-level approach mentioned in paper 2 :
 
 ## Basic Architecture
 In each level a pretrained ResNet50 classifier was used with FCNN layers added in the end for respective classification task, along with fine tuning or unfreezing some layers of ResNet50 to train it to our specific task.
